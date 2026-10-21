@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://b5g4vhe7ojlhb"]
+
+[ext_resource type="Script" uid="uid://mv6vadx1tf3p" path="res://game_manager.gd" id="1_smx3j"]
+[ext_resource type="PackedScene" uid="uid://160g32spcebk" path="res://Fase/Fase.glb" id="2_o2178"]
+[ext_resource type="Script" uid="uid://cbm463l0i6ace" path="res://player_pivot.gd" id="3_d5upp"]
+
+[sub_resource type="Environment" id="Environment_d5upp"]
+background_mode = 1
+background_color = Color(0.121163175, 0.0015540054, 0.0015603265, 0.25490198)
+background_energy_multiplier = 1.15
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+glow_intensity = 5.17
+glow_strength = 0.79
+glow_bloom = 0.02
+glow_hdr_threshold = 1.37
+glow_hdr_scale = 1.92
+glow_hdr_luminance_cap = 148.05
+fog_enabled = true
+fog_light_color = Color(0.34992266, 0.37487933, 0.4137009, 1)
+fog_light_energy = 0.25
+fog_sky_affect = 0.0
+volumetric_fog_density = 0.0
+adjustment_enabled = true
+adjustment_brightness = 0.69
+
+[node name="GameManager" type="Node3D" unique_id=1332182168]
+script = ExtResource("1_smx3j")
+
+[node name="Fase" parent="." unique_id=1768830872 instance=ExtResource("2_o2178")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=443600194]
+environment = SubResource("Environment_d5upp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1001509719]
+
+[node name="PlayerPivot" type="Node3D" parent="." unique_id=671635270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -9)
+script = ExtResource("3_d5upp")
+
+[node name="Camera3D" type="Camera3D" parent="PlayerPivot" unique_id=1775041769]
+transform = Transform3D(-1, -1.5180808e-08, 8.609463e-08, 0, 0.9848078, 0.1736482, -8.742278e-08, 0.1736482, -0.9848078, 0, 0, 0)
+current = true
+fov = 70.0
+
+[node name="InteriorLights" type="Node3D" parent="." unique_id=1330552750]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="InteriorLights" unique_id=263597858]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 15, 0)
+light_color = Color(1.389, 0.7, 0.347, 1)
+light_energy = 9.871
+light_indirect_energy = 8.02
+shadow_enabled = true
+shadow_bias = 0.31
+shadow_normal_bias = 2.584
+shadow_transmittance_bias = -3.752
+distance_fade_enabled = true
+spot_range = 18.972832
+spot_angle = 46.406246
+
+[node name="OmniLight3D" type="OmniLight3D" parent="InteriorLights" unique_id=1077902446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.828054, -14.473996)
+light_color = Color(1, 0.49803922, 0.23921569, 1)
+light_energy = 5.0
+light_indirect_energy = 10.0
+shadow_enabled = true
+distance_fade_enabled = true
+omni_range = 21.92179
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="InteriorLights" unique_id=69555112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3633795, 11.941719, 16.242722)
+light_color = Color(1, 0.49803922, 0.23921569, 1)
+light_energy = 5.0
+light_indirect_energy = 10.0
+shadow_enabled = true
+distance_fade_enabled = true
+omni_range = 22.043972
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="InteriorLights" unique_id=1923873339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.007893, 11.632046, 0.24860477)
+light_color = Color(1, 0.49803922, 0.23921569, 1)
+light_energy = 5.0
+light_indirect_energy = 10.0
+shadow_enabled = true
+distance_fade_enabled = true
+omni_range = 22.043972
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="InteriorLights" unique_id=844411848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.873243, 11.149242, 16.394512)
+light_color = Color(1, 0.49803922, 0.23921569, 1)
+light_energy = 5.0
+light_indirect_energy = 10.0
+shadow_enabled = true
+distance_fade_enabled = true
+omni_range = 22.043972
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="InteriorLights" unique_id=959861723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.979094, 12.397722, -0.617218)
+light_color = Color(1, 0.49803922, 0.23921569, 1)
+light_energy = 5.0
+light_indirect_energy = 10.0
+shadow_enabled = true
+distance_fade_enabled = true
+omni_range = 22.043972
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="InteriorLights" unique_id=1918037387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.979094, 12.164043, -16.769295)
+light_color = Color(1, 0.49803922, 0.23921569, 1)
+light_energy = 5.0
+light_indirect_energy = 10.0
+shadow_enabled = true
+distance_fade_enabled = true
+omni_range = 22.043972
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="InteriorLights" unique_id=1735870466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.58287, 11.878307, -16.70974)
+light_color = Color(1, 0.49803922, 0.23921569, 1)
+light_energy = 5.0
+light_indirect_energy = 10.0
+shadow_enabled = true
+distance_fade_enabled = true
+omni_range = 22.043972
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="InteriorLights" unique_id=1377667135]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.889532, 21.905972)
+light_color = Color(1, 0.49803922, 0.23921569, 1)
+light_energy = 5.0
+light_indirect_energy = 10.0
+shadow_enabled = true
+distance_fade_enabled = true
+omni_range = 24.590937
+
+[node name="ExteriorLights" type="Node3D" parent="." unique_id=417369792]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="ExteriorLights" unique_id=1231264933]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 44.349678, 10.631197, 0)
+light_color = Color(1, 0, 0, 1)
+light_energy = 1.99
+shadow_enabled = true
+shadow_transmittance_bias = 4.862
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="ExteriorLights" unique_id=549547893]
+transform = Transform3D(-4.371139e-08, 0, -0.99999994, 0, 0.99999994, 0, 1, 0, -4.3711385e-08, -44.35, 10.631, 0)
+light_color = Color(1, 0, 0, 1)
+light_energy = 1.99
+shadow_enabled = true
+shadow_transmittance_bias = 16.0
+
+[node name="DirectionalLight3D3" type="DirectionalLight3D" parent="ExteriorLights" unique_id=1858064655]
+transform = Transform3D(-1, 4.0274934e-16, 8.742278e-08, 4.3151047e-08, 0.8696946, 0.49359035, -7.603112e-08, 0.49359035, -0.8696946, 0.38483167, 9.671429, -44.35)
+light_color = Color(1, 0, 0, 1)
+light_energy = 1.99
+shadow_enabled = true
+shadow_transmittance_bias = 16.0

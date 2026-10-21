@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dwg8gnkw8yito"]
+
+[ext_resource type="Script" uid="uid://4sasm175p2y4" path="res://menu_pausa.gd" id="1_jd2x8"]
+
+[node name="MenuPausa" type="Control" unique_id=1344626583]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jd2x8")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1869917514]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.43529412)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1090322812]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=375168576]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "JOGO PAUSADO"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1281229058]
+layout_mode = 2
+text = "Salvar"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=129056312]
+layout_mode = 2
+text = "Configurações"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1678414480]
+layout_mode = 2
+text = "Sair para Menu Inicial"
+
+[node name="Button4" type="Button" parent="VBoxContainer" unique_id=664438222]
+layout_mode = 2
+text = "Sair do Jogo"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_btn_salvar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_btn_configuracoes_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_btn_sair_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_btn_sair_jogo_pressed"]

@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://doartbnyr0ovp"]
+
+[ext_resource type="Script" uid="uid://cpdw7awx31rxk" path="res://menu_configuracoes.gd" id="1_mdtvo"]
+
+[node name="MenuConfiguracoes" type="Control" unique_id=1896890895]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mdtvo")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=608774794]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06666667, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2137391503]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1098165559]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Configurações"
+horizontal_alignment = 1
+
+[node name="HBoxSensibilidade" type="HBoxContainer" parent="VBoxContainer" unique_id=176974388]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxSensibilidade" unique_id=1758794333]
+layout_mode = 2
+text = "Sensibilidade do Mouse"
+horizontal_alignment = 1
+
+[node name="SliderSensibilidade" type="HSlider" parent="VBoxContainer/HBoxSensibilidade" unique_id=1545910147]
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(500, -1)
+layout_mode = 2
+
+[node name="HBoxMusica" type="HBoxContainer" parent="VBoxContainer" unique_id=672604163]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxMusica" unique_id=1343097423]
+layout_mode = 2
+text = "Volume Música"
+horizontal_alignment = 1
+
+[node name="SliderMusica" type="HSlider" parent="VBoxContainer/HBoxMusica" unique_id=1555512305]
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(500, -1)
+layout_mode = 2
+
+[node name="HBoxSFX" type="HBoxContainer" parent="VBoxContainer" unique_id=581642806]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxSFX" unique_id=807187465]
+layout_mode = 2
+text = "Volume Efeitos"
+horizontal_alignment = 1
+
+[node name="SliderSFX" type="HSlider" parent="VBoxContainer/HBoxSFX" unique_id=1728051]
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(500, -1)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=728856073]
+layout_mode = 2
+text = "Voltar"
+
+[connection signal="value_changed" from="VBoxContainer/HBoxSensibilidade/SliderSensibilidade" to="." method="_on_slider_sensibilidade_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxMusica/SliderMusica" to="." method="_on_slider_musica_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxSFX/SliderSFX" to="." method="_on_slider_sfx_value_changed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_botao_voltar_pressed"]
